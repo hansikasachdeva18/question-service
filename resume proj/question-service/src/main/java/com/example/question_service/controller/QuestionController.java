@@ -2,8 +2,10 @@ package com.example.question_service.controller;
 
 
 import com.example.question_service.model.Question;
+import com.example.question_service.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,16 +23,22 @@ import java.util.List;
 // https://leetcode.com/problems/flip-equivalent-binary-trees/ example
 public class QuestionController {
 
-//    @Autowired
-//    private QuestionService questionService;
-//    // write method first
-//
-//    public ResponseEntity<List<Question>> getAllQuestions(){
-//        // ResponseEntity -> instead returning ArraysList convert this in json format
-//        // why json ormat -> json commonly used
-//        // Question -> class
-//        return questionService.getAllQuestions();
-//    }
+    @Autowired
+    private QuestionService questionService;
+    // write method first
+    @GetMapping("/allQuestions")
+    public ResponseEntity<List<Question>> getAllQuestions(){
+        // ResponseEntity -> instead returning ArraysList convert this in json format
+        // why json ormat -> json commonly used
+        // Question -> class
+        return questionService.getAllQuestions();
+    }
+
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "<h1>Hello World</h1>";
+    }
 
 
 }

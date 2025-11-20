@@ -12,5 +12,4 @@ public class QuestionServiceApplication {
 		System.out.println("Hello");
 		SpringApplication.run(QuestionServiceApplication.class, args);
 	}
-
 }
