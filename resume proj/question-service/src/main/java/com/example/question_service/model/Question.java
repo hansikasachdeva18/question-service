@@ -5,10 +5,7 @@ package com.example.question_service.model;
 // Question class tell that what data we are going to store in this table
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,11 +22,13 @@ public class Question {
     // structure of our table
     // all these are column
     private int id;
+    @Column(name = "question_title")
     private String questionTitle;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
+    @Column(name = "difficulty_level")
     private String difficultyLevel;
     private String category;
 }
